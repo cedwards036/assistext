@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.10'
+}
+
+group 'dev.christopheredwards'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    junitVersion = '5.7.1'
+}
+
+sourceCompatibility = '12'
+targetCompatibility = '12'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+application {
+    mainModule = 'dev.christopheredwards.assistext'
+    mainClass = 'dev.christopheredwards.assistext.HelloApplication'
+}
+
+javafx {
+    version = '12.0.2'
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
+dependencies {
+    implementation('org.kordamp.ikonli:ikonli-javafx:12.2.0')
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+}
+
+test {
+    useJUnitPlatform()
+}
