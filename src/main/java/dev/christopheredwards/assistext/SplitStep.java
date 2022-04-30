@@ -38,7 +38,7 @@ public class SplitStep implements PipelineStep {
     /**
      * Set whether the transformation will output a string with Windows-style line endings or not.
      *
-     * @param useWindowsLineEnding if true, transformation result will have Windows-style (\r\n) line endings; Linux-style (\n) otherwise
+     * @param useWindowsLineEnding if true, transformation result will have Windows-style (\r\n) line endings; Unix-style (\n) otherwise
      */
     public void setUseWindowsLineEnding(boolean useWindowsLineEnding) {
         this.useWindowsLineEnding = useWindowsLineEnding;

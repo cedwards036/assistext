@@ -29,8 +29,8 @@ class SortStepTest {
     @Test
     void sorts_multiline_string_in_ascending_alphabetical_order_by_default() {
         SortStep sortStep = new SortStep();
-        String linuxInput = "d\nc\nb\na";
-        assertEquals("a\nb\nc\nd", sortStep.transform(linuxInput));
+        String unixInput = "d\nc\nb\na";
+        assertEquals("a\nb\nc\nd", sortStep.transform(unixInput));
         String windowsInput = "d\r\nc\r\nb\r\na";
         assertEquals("a\nb\nc\nd", sortStep.transform(windowsInput));
     }

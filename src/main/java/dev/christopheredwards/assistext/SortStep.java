@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 /**
  * A text transformation pipeline step that sorts the lines of the given string.
  * By default, text will be sorted in ascending order, sensitive to case, and the resulting
- * sorted string will be given Linux-style line endings. These options can be individually
+ * sorted string will be given Unix-style line endings. These options can be individually
  * configured, however.
  */
 public class SortStep implements PipelineStep {
@@ -42,7 +42,7 @@ public class SortStep implements PipelineStep {
     /**
      * Set whether the transformation will output a string with Windows-style line endings or not.
      *
-     * @param useWindowsLineEnding if true, transformation result will have Windows-style (\r\n) line endings; Linux-style (\n) otherwise
+     * @param useWindowsLineEnding if true, transformation result will have Windows-style (\r\n) line endings; Unix-style (\n) otherwise
      */
     public void setUseWindowsLineEnding(boolean useWindowsLineEnding) {
         if (useWindowsLineEnding) {
