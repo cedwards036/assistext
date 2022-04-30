@@ -27,6 +27,18 @@ public class SortStep implements PipelineStep {
         setComparator();
     }
 
+    public String getLineEnding() {
+        return lineEnding;
+    }
+
+    public boolean sortsDescending() {
+        return sortDescending;
+    }
+
+    public boolean isCaseInsensitive() {
+        return caseInsensitive;
+    }
+
     /**
      * Set whether the transformation will output a string with Windows-style line endings or not.
      *

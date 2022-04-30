@@ -19,6 +19,14 @@ public class JoinStep implements PipelineStep {
         setIncludeEmptyLines(false);
     }
 
+    public String getSeparator() {
+        return separator;
+    }
+
+    public boolean includesEmptyLines() {
+        return includeEmptyLines;
+    }
+
     /**
      * Specify the string that will be used as the separator/delimiter for the join operation.
      *

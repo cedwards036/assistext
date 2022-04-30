@@ -22,6 +22,18 @@ public class SplitStep implements PipelineStep {
         setUseRegex(false);
     }
 
+    public String getSplitString() {
+        return rawSplitString;
+    }
+
+    public String getLineEnding() {
+        return lineEnding;
+    }
+
+    public boolean usesRegex() {
+        return useRegex;
+    }
+
     /**
      * Set whether the transformation will output a string with Windows-style line endings or not.
      *
