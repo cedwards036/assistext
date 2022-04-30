@@ -46,7 +46,7 @@ public class JoinStep implements PipelineStep {
         if (s == null) {
             throw new InvalidInputException("null");
         }
-        String[] splitLines = s.split("\\R", 0);
+        String[] splitLines = s.split("\\R");
         if (!includeEmptyLines) {
             splitLines = Arrays.stream(splitLines).filter(str -> !str.isEmpty()).toArray(String[]::new);
         }
