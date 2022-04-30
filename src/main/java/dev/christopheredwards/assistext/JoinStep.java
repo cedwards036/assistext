@@ -1,5 +1,7 @@
 package dev.christopheredwards.assistext;
 
+import java.util.Arrays;
+
 /**
  * A text transformation pipeline step that joins the lines of the given string.
  * By default, text will be joined with no separator (i.e. the empty string).
@@ -7,12 +9,14 @@ package dev.christopheredwards.assistext;
 public class JoinStep implements PipelineStep {
 
     private String separator;
+    private boolean includeEmptyLines;
 
     /**
      * Class constructor
      */
     public JoinStep() {
         setSeparator("");
+        setIncludeEmptyLines(false);
     }
 
     /**
@@ -27,6 +31,10 @@ public class JoinStep implements PipelineStep {
         this.separator = separator;
     }
 
+    public void setIncludeEmptyLines(boolean includeEmptyLines) {
+        this.includeEmptyLines = includeEmptyLines;
+    }
+
     /**
      * Produce a copy of the given string that is joined on a pre-specified separator.
      *
@@ -38,6 +46,10 @@ public class JoinStep implements PipelineStep {
         if (s == null) {
             throw new InvalidInputException("null");
         }
-        return String.join(separator, s.split("\\R"));
+        String[] splitLines = s.split("\\R", 0);
+        if (!includeEmptyLines) {
+            splitLines = Arrays.stream(splitLines).filter(str -> !str.isEmpty()).toArray(String[]::new);
+        }
+        return String.join(separator, splitLines);
     }
 }

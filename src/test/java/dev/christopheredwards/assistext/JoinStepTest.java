@@ -48,4 +48,21 @@ public class JoinStepTest {
         String input = "a\nb\r\nc";
         assertEquals("abc", joinStep.transform(input));
     }
+
+    @Test
+    void includes_non_trailing_empty_lines_in_output_if_option_is_specified() {
+        JoinStep joinStep = new JoinStep();
+        joinStep.setSeparator(",");
+        joinStep.setIncludeEmptyLines(true);
+        String input = "a\n\n\n\nb\nc\n\n\n\n";
+        assertEquals("a,,,,b,c", joinStep.transform(input));
+    }
+
+    @Test
+    void ignores_empty_lines_in_output_if_option_is_not_specified() {
+        JoinStep joinStep = new JoinStep();
+        joinStep.setSeparator(",");
+        String input = "a\n\n\n\nb\nc\n\n\n\n";
+        assertEquals("a,b,c", joinStep.transform(input));
+    }
 }
