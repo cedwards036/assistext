@@ -21,9 +21,9 @@ public class SortStep implements PipelineStep {
      * Class constructor
      */
     public SortStep() {
-        lineEnding = "\n";
-        sortDescending = false;
-        caseInsensitive = false;
+        setUseWindowsLineEnding(false);
+        setSortDescending(false);
+        setCaseInsensitive(false);
         setComparator();
     }
 

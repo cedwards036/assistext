@@ -12,7 +12,7 @@ public class JoinStep implements PipelineStep {
      * Class constructor
      */
     public JoinStep() {
-        separator = "";
+        setSeparator("");
     }
 
     /**
