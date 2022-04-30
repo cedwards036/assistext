@@ -13,6 +13,9 @@ public class SplitStep implements PipelineStep {
     private String lineEnding;
     private boolean useRegex;
 
+    /**
+     * Class constructor
+     */
     public SplitStep() {
         setSplitString(",");
         setUseWindowsLineEnding(false);
