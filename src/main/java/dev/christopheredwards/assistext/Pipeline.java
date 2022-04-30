@@ -1,6 +1,8 @@
 package dev.christopheredwards.assistext;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * A pipeline of text manipulation steps that are chained together to transform a given input string.
@@ -14,6 +16,10 @@ public class Pipeline {
      */
     public Pipeline() {
         steps = new ArrayList<>();
+    }
+
+    public List<PipelineStep> getSteps() {
+        return Collections.unmodifiableList(steps);
     }
 
     /**
