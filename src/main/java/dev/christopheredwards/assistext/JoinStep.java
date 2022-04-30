@@ -28,7 +28,7 @@ public class JoinStep implements PipelineStep {
     }
 
     /**
-     * Produce a copy of the given string that is join on a pre-specified separator.
+     * Produce a copy of the given string that is joined on a pre-specified separator.
      *
      * @param s the string being joined
      * @return a joined copy of the string
