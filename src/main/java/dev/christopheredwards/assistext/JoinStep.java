@@ -31,6 +31,11 @@ public class JoinStep implements PipelineStep {
         this.separator = separator;
     }
 
+    /**
+     * Set whether the transformation will incorporate non-trailing empty lines or not.
+     *
+     * @param includeEmptyLines if true, transformation will include non-trailing empty lines in the joined output; otherwise such lines will be filtered out
+     */
     public void setIncludeEmptyLines(boolean includeEmptyLines) {
         this.includeEmptyLines = includeEmptyLines;
     }
