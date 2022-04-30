@@ -10,16 +10,26 @@ import java.util.List;
 public class Pipeline {
 
     private final ArrayList<PipelineStep> steps;
+    private String name;
 
     /**
      * Class constructor
      */
     public Pipeline() {
         steps = new ArrayList<>();
+        name = "Untitled pipeline";
     }
 
     public List<PipelineStep> getSteps() {
         return Collections.unmodifiableList(steps);
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 
     /**

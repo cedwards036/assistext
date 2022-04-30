@@ -5,6 +5,9 @@ import javafx.scene.control.TextArea;
 
 public class Controller {
     @FXML
+    private NormalText pipelineTitle;
+
+    @FXML
     private StepCardList steps;
 
     @FXML
@@ -17,6 +20,8 @@ public class Controller {
     public void initialize() {
 
         Pipeline pipeline = buildPipeline();
+
+        pipelineTitle.setText(pipeline.getName());
 
         for (PipelineStep step : pipeline.getSteps()) {
             if (step instanceof JoinStep) {
@@ -33,12 +38,15 @@ public class Controller {
         inputText.textProperty().addListener(((observable, oldValue, newValue) -> {
             outputText.setText(pipeline.run(newValue));
         }));
+        inputText.setPromptText("Enter input text to be transformed...");
 
         outputText.setEditable(false);
+        outputText.setPromptText("Transformation output...");
     }
 
     private Pipeline buildPipeline() {
         Pipeline pipeline = new Pipeline();
+        pipeline.setName("Example pipeline 1");
 
         SplitStep splitStep = new SplitStep();
         splitStep.setSplitString("$$");

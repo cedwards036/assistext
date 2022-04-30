@@ -1,7 +1,6 @@
 package dev.christopheredwards.assistext;
 
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 
 public abstract class StepCard extends VBox {
 
@@ -10,16 +9,19 @@ public abstract class StepCard extends VBox {
     public StepCard(String title) {
         super();
         attributes = new VBox();
-        getChildren().add(new Text(title));
+        attributes.getStyleClass().add("step-card-attributes");
+        NormalText titleText = new NormalText(title);
+        titleText.getStyleClass().add("step-card-title");
+        getChildren().add(titleText);
         getChildren().add(attributes);
     }
 
     public void addKeyValueAttribute(String key, String value) {
-        attributes.getChildren().add(new Text(key + ": \"" + value + "\""));
+        attributes.getChildren().add(new NormalText(key + ": \"" + value + "\""));
     }
 
     public void addValueAttribute(String attribute) {
-        attributes.getChildren().add(new Text(attribute));
+        attributes.getChildren().add(new NormalText(attribute));
     }
 
 }

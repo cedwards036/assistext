@@ -1,0 +1,53 @@
+.root {
+    -fx-font-size: 11pt;
+    -fx-font-family: "SansSerif";
+    -fx-base: #000000;
+    -fx-background: rgba(18, 18, 18, 1);
+    font-color: rgba(255, 255, 255, 0.70);
+    element-color: #303030;
+}
+
+#pipelineTitle {
+    -fx-font-size: 18pt;
+    -fx-font-weight: bold;
+}
+
+.text-area {
+    -fx-text-fill: font-color;
+    -fx-focus-color: -fx-control-inner-background;
+    -fx-faint-focus-color: -fx-control-inner-background;
+}
+
+.text-area .content {
+    -fx-background-color: element-color;
+}
+
+.text-area:focused .content {
+    -fx-background-color: element-color;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+#outputText .content, #outputText:focused .content {
+    -fx-cursor: pointer;
+}
+
+.main-text-color {
+    -fx-fill: font-color;
+}
+
+.step-card {
+    -fx-background-color: element-color;
+    -fx-padding: 20;
+    -fx-spacing: 20;
+    -fx-min-height: 115;
+}
+
+.step-card-attributes {
+    -fx-spacing: 5;
+}
+
+.step-card-title {
+    -fx-font-weight: bold;
+    -fx-font-size: 13pt;
+}
