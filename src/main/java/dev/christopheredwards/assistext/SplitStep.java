@@ -12,6 +12,7 @@ public class SplitStep implements PipelineStep {
     private String rawSplitString;
     private String lineEnding;
     private boolean useRegex;
+    private boolean useWindowsLineEnding;
 
     /**
      * Class constructor
@@ -26,8 +27,8 @@ public class SplitStep implements PipelineStep {
         return rawSplitString;
     }
 
-    public String getLineEnding() {
-        return lineEnding;
+    public boolean usesWindowsLineEnding() {
+        return useWindowsLineEnding;
     }
 
     public boolean usesRegex() {
@@ -40,6 +41,7 @@ public class SplitStep implements PipelineStep {
      * @param useWindowsLineEnding if true, transformation result will have Windows-style (\r\n) line endings; Linux-style (\n) otherwise
      */
     public void setUseWindowsLineEnding(boolean useWindowsLineEnding) {
+        this.useWindowsLineEnding = useWindowsLineEnding;
         if (useWindowsLineEnding) {
             this.lineEnding = "\r\n";
         } else {
