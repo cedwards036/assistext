@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 public class SortStep implements PipelineStep {
 
     private String lineEnding;
+    private boolean useWindowsLineEnding;
     private boolean sortDescending;
     private boolean caseInsensitive;
     private Comparator<String> comparator;
@@ -27,8 +28,8 @@ public class SortStep implements PipelineStep {
         setComparator();
     }
 
-    public String getLineEnding() {
-        return lineEnding;
+    public boolean usesWindowsLineEnding() {
+        return useWindowsLineEnding;
     }
 
     public boolean sortsDescending() {
@@ -45,6 +46,7 @@ public class SortStep implements PipelineStep {
      * @param useWindowsLineEnding if true, transformation result will have Windows-style (\r\n) line endings; Unix-style (\n) otherwise
      */
     public void setUseWindowsLineEnding(boolean useWindowsLineEnding) {
+        this.useWindowsLineEnding = useWindowsLineEnding;
         if (useWindowsLineEnding) {
             this.lineEnding = "\r\n";
         } else {
