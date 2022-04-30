@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class JoinStepTest {
 
     @Test
-    void test_null() {
+    void throws_error_when_transforming_null_input() {
         JoinStep joinStep = new JoinStep();
         assertThrows(PipelineStep.InvalidInputException.class, () -> joinStep.transform(null));
     }

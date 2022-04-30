@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class SplitStepTest {
 
     @Test
-    void test_null() {
+    void throws_error_when_transforming_null_input() {
         SplitStep splitStep = new SplitStep();
         assertThrows(PipelineStep.InvalidInputException.class, () -> splitStep.transform(null));
     }

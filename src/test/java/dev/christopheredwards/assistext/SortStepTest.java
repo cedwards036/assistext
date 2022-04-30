@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class SortStepTest {
 
     @Test
-    void test_null() {
+    void throws_error_when_transforming_null_input() {
         SortStep sortStep = new SortStep();
         assertThrows(PipelineStep.InvalidInputException.class, () -> sortStep.transform(null));
     }
